@@ -141,7 +141,7 @@ body {
   overflow: hidden;
 }
 
-.calculator__display {
+.display {
   background-color: #222222;
   color: #fff;
   font-size: 1.714285714em;
@@ -177,11 +177,11 @@ body {
   z-index: 1;
 }
 
-.key--operator {
+.operator {
   background-color: #eee;
 }
 
-.key--equal {
+.equal-key {
   background-image: linear-gradient(to bottom, #fe886a, #ff7033);
   grid-column: -2;
   grid-row: 2 / span 4;
