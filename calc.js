@@ -1,47 +1,62 @@
-const digits = document.querySelectorAll('.digit');
+/*const digits = document.querySelectorAll('.digit');
 const operators = document.querySelectorAll('.operator');
-const display = document.querySelector('.display');
-display.innerHTML = 0;
+ */
+
 let firstNumber = null;
 let secondNumber = null;
 
-
-//detect and render the digit that has been pressed
-for(let i = 0; i < digits.length; i++) {
-    let theDigit = digits[i];
-    theDigit.addEventListener('click', (e) => {
-        
-        let firstNumber = `<span> ${theDigit.innerHTML} </span>`
-        display.innerHTML = firstNumber;
-        
-    })
-
-    };
-
-    function calculate() {
-        for(let i = 0; i < operators.length; i++) {
-            let theOperator = operators[i];
-
-            theOperator.addEventListener('click', (e) =>{
-                console.log('This is the operator', theOperator.innerHTML);
-            })
-            
-
-            if(theOperator === "add") {
-               return firstNumber + secondNumber;
+const buttonOne = document.querySelector('.button-one');
+const plus = document.querySelector('.plus-button');
+const buttonTwo = document.querySelector('.button-two');
+const display = document.getElementById('display');
+const clear = document.querySelector('.clear');
+const equal = document.querySelector('.equal-key');
 
 
-            } 
-    }};
+function getFirstNumber(number) {
+    firstNumber === null ? firstNumber = number : firstNumber += number;
+};
 
-    calculate();
-//detect and render operator that has been pressed
-/*for(let i = 0; i < operators.length; i++) {
-    let theOperator = operators[i];
-    theOperator.addEventListener('click', (e) => {
-        
-        const operator = `<span> ${theOperator.innerHTML} </span>`
-        display.innerHTML = operator;
-    })
-    };*/
+function getSecondNumber(number) {
+    secondNumber === null ? secondNumber = number : secondNumber += number;
+};
+
+buttonOne.addEventListener('click', (e) => {
+    getFirstNumber(e.target.value);
+    renderInput(firstNumber);
+    console.log('this is the first number', firstNumber);
+    console.log('this is the target value', e.target.value);
+});
+
+buttonTwo.addEventListener('click', (e) => {
+        getSecondNumber(e.target.value);
+        renderInput(secondNumber);
+        console.log('This is the second number', secondNumber);
+        console.log('This is the target value', e.target.value);
     
+});
+
+plus.addEventListener('click', (e) => {
+    const plusOperator = e.target.value;
+        console.log(plusOperator);
+    });
+
+equal.addEventListener('click', (e) => {
+    const result = parseFloat(firstNumber) + parseFloat(secondNumber);
+    display.value = result;
+    console.log('Your result is', result);
+})
+
+clear.addEventListener('click', (e) => {
+    display.value = 0;
+})
+
+function renderInput(args) {
+    display.value = args;
+    console.log(args);
+};
+
+
+
+
+ 
