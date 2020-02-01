@@ -29,6 +29,7 @@ buttonOne.addEventListener('click', (e) => {
 });
 
 buttonTwo.addEventListener('click', (e) => {
+        display.value = 0;
         getSecondNumber(e.target.value);
         renderInput(secondNumber);
         console.log('This is the second number', secondNumber);
