@@ -19,14 +19,15 @@ for (let i =0; i < digits.length; i++) {
     let digit = digits[i];
 
     digit.addEventListener('click', (e) => {
-
-        if (operator !== null) {
+        number = e.target.value
+        renderInput(number);
+        /*if (operator !== null) {
             getSecondNumber(e.target.value);
             display.value = renderInput(secondNumber);
         } else {
             getFirstNumber(e.target.value);
             renderInput(firstNumber);
-        }
+        }*/
         console.log('this is the first number', firstNumber);
         console.log('this is the target value', e.target.value);
     });
@@ -36,14 +37,13 @@ for (let i =0; i < operators.length; i++) {
     let theOperator = operators[i];
 
 theOperator.addEventListener('click', (e) => {
-    let operator = e.target.value;
-    console.log(operator);
+     
+    console.log(e.target.value);
     });
 }
 
 equal.addEventListener('click', (e) => {
-    
-   // const result = parseFloat(firstNumber) + parseFloat(secondNumber);
+
     display.value = calculate();
 })
 

@@ -49,7 +49,10 @@ equal.addEventListener('click', (e) => {
 })
 
 clear.addEventListener('click', (e) => {
-    display.value = 0;
+        display.value = 0;
+        firstNumber = null;
+        secondNumber = null;
+        plusOperator = null;
 })
 
 function renderInput(args) {
