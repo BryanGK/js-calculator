@@ -19,17 +19,16 @@ for (let i =0; i < digits.length; i++) {
     let digit = digits[i];
 
     digit.addEventListener('click', (e) => {
-        number = e.target.value
-        renderInput(number);
-        /*if (operator !== null) {
-            getSecondNumber(e.target.value);
-            display.value = renderInput(secondNumber);
+        number = e.target.value;
+        if (theOperator === null) {
+            getFirstNumber(number);
+            renderInput(firstNumber); 
+            console.log('firstNumber value is', firstNumber);
         } else {
-            getFirstNumber(e.target.value);
-            renderInput(firstNumber);
-        }*/
-        console.log('this is the first number', firstNumber);
-        console.log('this is the target value', e.target.value);
+            getSecondNumber(number);
+            renderInput(secondNumber);
+            console.log('secondNumber value is', secondNumber);
+        }
     });
 }
 
@@ -37,14 +36,15 @@ for (let i =0; i < operators.length; i++) {
     let theOperator = operators[i];
 
 theOperator.addEventListener('click', (e) => {
-     
-    console.log(e.target.value);
+     operator = e.target.value;
+    console.log('operator is', operator);
+    console.log('theOperator is', theOperator.value);
     });
 }
 
 equal.addEventListener('click', (e) => {
 
-    display.value = calculate();
+    renderInput(calculate());
 })
 
 function clearDisplay() {
@@ -61,7 +61,7 @@ function renderInput(args) {
     console.log(args);
 };
 
-function calculate(firstNumber, secondNumber, operator) {
+function calculate(firstNumber, operator, secondNumber) {
     switch (operator) {
         case '+':
             display.value = firstNumber + secondNumber
@@ -83,7 +83,7 @@ function calculate(firstNumber, secondNumber, operator) {
 
 clearDisplay();
 
-
+console.log('theOperator is', theOperator);
 
 
 
