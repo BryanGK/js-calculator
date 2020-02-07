@@ -18,38 +18,23 @@ function getSecondNumber(number) {
 };
 
 function numberButtonCallback(e) {
-
-   firstNumber === null ? firstNumber = e.target.value : firstNumber += e.target.value;
-       //getFirstNumber(firstNumber);
-       console.log('This is the target value', firstNumber);
-       renderInput(firstNumber);
-       /*if(firstNumber !== null && plusOperator !== null) {
-        e.target.value = secondNumber;
-       renderInput(e.targe.value);
-      }*/
    
+    if (plusOperator === null) {
+        getFirstNumber(e.target.value);
+        console.log('This is the firstNumber', firstNumber);
+        renderInput(firstNumber);
+    } else {
+        getSecondNumber(e.target.value);
+        console.log('This is the secondNumber', secondNumber);
+        renderInput(secondNumber);
+    }
    } 
 buttonOne.addEventListener('click', numberButtonCallback);
 buttonTwo.addEventListener('click', numberButtonCallback);
 
-
-/*buttonOne.addEventListener('click', (e) => {
-    getFirstNumber(e.target.value);
-    renderInput(firstNumber);
-    console.log('this is the first number', firstNumber);
-    console.log('this is the target value', e.target.value);
-});
-buttonTwo.addEventListener('click', (e) => {
-        display.value = 0;
-        if(plus !== null) {getSecondNumber(e.target.value);
-        renderInput(secondNumber);
-        console.log('This is the second number', secondNumber);
-        console.log('This is the target value', e.target.value);
-        };
-});*/
 plus.addEventListener('click', (e) => {
-    let plusOperator = e.target.value;
-        console.log(plusOperator);
+    plusOperator = e.target.value;
+        console.log('This is the plusOperator value', plusOperator);
     });
 equal.addEventListener('click', (e) => {
     const result = parseFloat(firstNumber) + parseFloat(secondNumber);
@@ -71,3 +56,5 @@ function renderInput(args) {
     display.value = args;
     console.log(args);
 };
+
+console.log('plusOperator value =', plusOperator);
