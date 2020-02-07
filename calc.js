@@ -3,7 +3,7 @@ const operators = document.querySelectorAll('.operator');
  */
 let firstNumber = null;
 let secondNumber = null;
-let plusOperator = null;
+let operator = null;
 const buttonOne = document.querySelector('.button-one');
 const plus = document.querySelector('.plus-button');
 const buttonTwo = document.querySelector('.button-two');
@@ -13,6 +13,7 @@ const equal = document.querySelector('.equal-key');
 function getFirstNumber(number) {
     firstNumber === null ? firstNumber = number : firstNumber += number;
 };
+
 function getSecondNumber(number) {
     secondNumber === null ? secondNumber = number : secondNumber += number;
 };

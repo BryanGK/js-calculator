@@ -2,7 +2,7 @@ const digits = document.querySelectorAll('.digit');
 const operators = document.querySelectorAll('.operator');
 let firstNumber = null;
 let secondNumber = null;
-let theOperator = null;
+let operator = null;
 const display = document.getElementById('display');
 const clear = document.querySelector('.clear');
 const equal = document.querySelector('.equal-key');
@@ -18,27 +18,29 @@ function getSecondNumber(number) {
 for (let i =0; i < digits.length; i++) {
     let digit = digits[i];
 
-    digit.addEventListener('click', (e) => {
-        number = e.target.value;
-        if (theOperator === null) {
-            getFirstNumber(number);
-            renderInput(firstNumber); 
-            console.log('firstNumber value is', firstNumber);
-        } else {
-            getSecondNumber(number);
-            renderInput(secondNumber);
-            console.log('secondNumber value is', secondNumber);
-        }
-    });
+    digit.addEventListener('click', numberButtonCallback);
 }
 
+function numberButtonCallback(e) {
+   
+    if (operator === null) {
+        getFirstNumber(e.target.value);
+        console.log('This is the firstNumber', firstNumber);
+        renderInput(firstNumber);
+    } else {
+        getSecondNumber(e.target.value);
+        console.log('This is the secondNumber', secondNumber);
+        renderInput(secondNumber);
+    }
+   } 
+
 for (let i =0; i < operators.length; i++) {
-    let theOperator = operators[i];
+   let theOperator = operators[i];
+   console.log(theOperator.value);
 
 theOperator.addEventListener('click', (e) => {
-     operator = e.target.value;
-    console.log('operator is', operator);
-    console.log('theOperator is', theOperator.value);
+    operator = e.target.value
+    console.log('operator =', operator);
     });
 }
 
@@ -52,7 +54,7 @@ function clearDisplay() {
         display.value = 0;
         firstNumber = null;
         secondNumber = null;
-        theOperator = null;
+        operator = null;
     })
 };
 
@@ -61,7 +63,7 @@ function renderInput(args) {
     console.log(args);
 };
 
-function calculate(firstNumber, operator, secondNumber) {
+function calculate(firstNumber, secondNumber) {
     switch (operator) {
         case '+':
             display.value = firstNumber + secondNumber
@@ -83,7 +85,7 @@ function calculate(firstNumber, operator, secondNumber) {
 
 clearDisplay();
 
-console.log('theOperator is', theOperator);
+console.log('operator =', operator);
 
 
 
