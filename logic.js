@@ -64,18 +64,22 @@ function renderInput(args) {
 };
 
 function calculate(firstNumber, secondNumber) {
+
+    let num1 = parseFloat(firstNumber);
+    let num2 = parseFloat(secondNumber);
     switch (operator) {
+        
         case '+':
-            display.value = parseFloat(firstNumber) + parseFloat(secondNumber)
+            display.value = num1 + num2
             break;
         case '-':
-            display.value = parseFloat(firstNumber) - parseFloat(secondNumber)
+            display.value = num1 - num2
             break;
         case '*':
-            display.value = parseFloat(firstNumber) * parseFloat(secondNumber)
+            display.value = num1 * num2
             break;
         case '/':
-            display.value = parseFloat(firstNumber) / parseFloat(secondNumber)
+            display.value = num1 / num2
             break;
         default:
             display.value = 0;
