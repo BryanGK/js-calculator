@@ -19,8 +19,7 @@ function getSecondNumber(number) {
 };
 
 function numberButtonCallback(e) {
-   
-    if (plusOperator === null) {
+   if(operator === null) {
         getFirstNumber(e.target.value);
         console.log('This is the firstNumber', firstNumber);
         renderInput(firstNumber);
@@ -34,8 +33,8 @@ buttonOne.addEventListener('click', numberButtonCallback);
 buttonTwo.addEventListener('click', numberButtonCallback);
 
 plus.addEventListener('click', (e) => {
-    plusOperator = e.target.value;
-        console.log('This is the plusOperator value', plusOperator);
+    operator = e.target.value;
+        console.log('This is the plusOperator value', operator);
     });
 equal.addEventListener('click', (e) => {
     const result = parseFloat(firstNumber) + parseFloat(secondNumber);
@@ -43,7 +42,7 @@ equal.addEventListener('click', (e) => {
     console.log('Your result is', result);
     firstNumber = null;
     secondNumber = null;
-    plusOperator = null;
+    operator = null;
 
 });
 
@@ -51,11 +50,11 @@ clear.addEventListener('click', (e) => {
         display.value = 0;
         firstNumber = null;
         secondNumber = null;
-        plusOperator = null;
+        operator = null;
 })
 function renderInput(args) {
     display.value = args;
     console.log(args);
 };
 
-console.log('plusOperator value =', plusOperator);
+console.log('Operator value =', operator);

@@ -46,7 +46,7 @@ theOperator.addEventListener('click', (e) => {
 
 equal.addEventListener('click', (e) => {
 
-    renderInput(calculate());
+    renderInput(calculate(firstNumber, secondNumber));
 })
 
 function clearDisplay() {
@@ -66,20 +66,21 @@ function renderInput(args) {
 function calculate(firstNumber, secondNumber) {
     switch (operator) {
         case '+':
-            display.value = firstNumber + secondNumber
+            display.value = parseFloat(firstNumber) + parseFloat(secondNumber)
             break;
         case '-':
-            display.value = firstNumber - secondNumber
+            display.value = parseFloat(firstNumber) - parseFloat(secondNumber)
             break;
         case '*':
-            display.value = firstNumber * secondNumber
+            display.value = parseFloat(firstNumber) * parseFloat(secondNumber)
             break;
         case '/':
-            display.value = firstNumber / secondNumber
+            display.value = parseFloat(firstNumber) / parseFloat(secondNumber)
             break;
         default:
             display.value = 0;
     }
+    return display.value;
 };
 
 
