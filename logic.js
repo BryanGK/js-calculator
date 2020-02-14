@@ -3,6 +3,7 @@ const operators = document.querySelectorAll('.operator');
 let firstNumber = null;
 let secondNumber = null;
 let operator = null;
+let equals = false;
 const display = document.getElementById('display');
 const clear = document.querySelector('.clear');
 const equal = document.querySelector('.equal-key');
@@ -39,15 +40,20 @@ for (let i =0; i < operators.length; i++) {
    console.log(theOperator.value);
 
 theOperator.addEventListener('click', (e) => {
-    operator = e.target.value
+    operator = e.target.value;
     console.log('operator =', operator);
     });
 }
 
 equal.addEventListener('click', (e) => {
 
-    renderInput(calculate(firstNumber, secondNumber));
-})
+    renderInput(calculate(firstNumber, secondNumber));  
+    firstNumber = display.value;
+    secondNumber = null;
+    console.log('display value is ', display.value);
+    console.log('current firstNumber value is ', firstNumber);
+    console.log('current secondNumber value is ', secondNumber);
+});
 
 function clearDisplay() {
     clear.addEventListener('click', (e) => {
@@ -90,7 +96,7 @@ function calculate(firstNumber, secondNumber) {
 
 clearDisplay();
 
-console.log('operator =', operator);
+console.log('operator value =', operator);
 
 
 

@@ -57,4 +57,4 @@ function renderInput(args) {
     console.log(args);
 };
 
-console.log('Operator value =', operator);
+console.log('l.^kOperator value =', operator);

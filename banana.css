@@ -1,0 +1,358 @@
+/*
+Theme Name: R1
+Theme URI: https://www.trevormearns.com
+Author: Trevor Mearns
+Description: A basic theme using the Bootstrap framework.
+Version: 1.0
+Text Domain: r1
+*/
+html {
+    overflow: hidden;
+    /* height: 100%; I commented out this declaration because it messes up your scrolling */
+    }
+    
+    body {
+        margin-top: 0px;
+        overflow-x: hidden !important;
+        margin-left: 0px;
+        margin-right: 0px;
+        height: 100%;
+    }
+    .custom-header {
+      margin-bottom: 0 !important;
+    }
+    /*top bar of site*/
+    .main-nav{
+        height: 4em;
+        background-color: black;
+        width: 100%;
+        margin-top: 0px;
+    }
+    
+    /*css rendering for hamburger menu body*/
+    .navbar-toggler{
+        width: 47px;
+        height: 34px;
+        background-color: black;
+        border: solid;
+        border-width: 1px;
+        border-color: white;
+        margin-bottom: .5em;
+    }
+    
+    /*css rendering for hamburger menu lines*/
+    .navbar-toggler .line{
+        width: 100%;
+        float: left;
+        height: 2px;
+        background-color: #fff;
+        margin-bottom: 5px;
+    }
+    .on-page-nav ul li{
+        display: inline;
+    }
+    .on-page-nav ul li a{
+        text-decoration: none;
+        color: white;
+        padding: 1em 1.5em;
+        font-size: 1.8em;
+    }
+    
+    .on-page-nav{
+        background-color: #217503;
+        text-align: center;
+        display: flex;
+    }
+    
+    /* renders wp_nav_menu items horizontally*/
+    .on-page-menu {
+        display: inline;
+        
+    }
+    
+    /* renders icon text in white*/
+    nav a.navbar-brand  {
+        color: white !important;
+        margin-left: 1.5em;
+    }
+    
+    /* renders nav item text in white*/
+    nav .navbar-nav li a{
+      color: white !important;
+      text-decoration: none;
+      }
+    /*horizontal alignment of nav items*/
+    #navbarTogglerDemo02 {
+        padding-left: 18%;
+    }
+    
+      
+      /*top level header title*/
+    #site-title-wrapper{
+    
+        margin-top: 6em;
+    }
+    .main-title{
+        color: #fff;
+        font-family: Meiryo;
+        font-weight: 400;
+        font-size: 2.5em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+        text-shadow: 2px 2px #fff;
+    }
+    
+    /*header sub-title*/
+    #sub-title{
+        color: #fff;
+        font-family: Meiryo;
+        font-weight: 100;
+        font-size: 1.5em;
+        padding-left: .5em;
+        margin-top: -1em;
+        
+    }
+    #header-container{
+        margin-bottom: 5em;
+    }
+    .navbar-text a {
+        color: white;
+        padding-right: 2em;
+    }
+    
+    /*cta buttons on jumbotron*/
+    .jumbotron-button{
+        margin: 3em 1em;
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    .button-div{
+        margin-bottom: -10px;
+    }
+    
+    #btn1{
+        background-color: #3276fd;
+        border: none;
+        border-radius: 20px;
+        opacity: 80%;
+    }
+    
+    #btn1:hover {
+        background-color: #428bca;
+    }
+    
+    
+    #title-container{
+        background-color: white;
+        opacity: 60%;
+    }
+    #desktop-jumbotron{
+        background-image: url('img/spring-276014_1920.jpg');
+        background-size: cover;
+        padding-top: 4em;
+        padding-bottom: 10em;
+        margin-top: 0px;
+        margin-bottom: 1px;
+    
+    }
+    
+    
+    
+    #header-cta-row{
+       margin-top: 3em;
+    }
+    .sub-header{
+        background-color: black;
+        max-height: 3em;
+        text-align: center;
+        color: white;
+    }
+    
+    #contents{
+        background-color: black;
+        color: white;
+        font-size: .5em;
+        margin-top: -18px;
+        padding-top: .5em;
+    }
+    .page-title{
+        font-weight: 700;
+    }
+    .course-intro-text{
+        font-size: 1.3em;
+    }
+    .icon-list{
+        padding-left: 35%;
+        font-size: 1.2em;
+        margin-top: 1.5%;
+        margin-bottom: 1.5%;
+    }
+    #jump-button-wrap{
+        text-align: center;
+    }
+    #curriculum-jump-button{
+        background-color: #3276fd;
+        padding: 10px 16px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 500;
+        color: white;
+        opacity: 80%;
+    }
+    #curriculum-jump-button:hover{
+        background-color: #428bca;
+        color: #eeeeee;
+    }
+    .contact-jump-button-wrapper {
+           text-align: center;
+    }
+    .contact-jump-button{
+         background-color: #3276fd;
+        padding: 10px 20px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-weight: 500;
+        color: white;
+        opacity: 80%;
+        text-decoration: none;
+    }
+    .course-details{
+      margin-bottom: 40px;
+      margin-top: 40px;
+      }
+      
+    
+    
+    
+      
+    .price-table{
+        font-size: 20px;
+    }
+    .ac_title_class{
+        margin-left: 30%;
+        font-weight: 600;
+    }
+    .nf-form-fields-required{
+        display: none;
+    }
+    #nf-form-title-1{
+        text-align: center;
+    }
+    
+    
+    #nf-field-4{
+         background-color: #3276fd;
+        border: none;
+        border-radius: 20px;
+        opacity: 80%;
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+    
+    .footer{
+        height: 4em;
+        background-color: black;
+        text-align: center;
+        padding-top: 1em;
+        
+        
+    }
+    
+    .footer p {
+        color: white;
+        margin: 0 2em;
+    }
+    
+    .footer p a {
+        color: white;
+    }
+    
+    /*------------------------------------------
+      Responsive Grid Media Queries - 1280, 1024, 768, 480
+       1280-1024   - desktop (default grid)
+       1024-768    - tablet landscape
+       768-480     - tablet 
+       480-less    - phone landscape & smaller
+    --------------------------------------------*/
+    @media only screen and (min-width: 1024px) and (max-width: 1280px) { 
+        #mobile-jumbotron {
+            display: none;
+        }
+    }
+    
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+       #mobile-jumbotron {
+            display: none;
+        }
+        
+    }
+    
+    @media only screen and (min-width: 480px) and (max-width: 768px) {
+         #mobile-jumbotron {
+            display: none;
+        }
+        
+    }
+    
+    @media only screen and (max-width: 480px) {
+        nav a.navbar-brand {
+            margin-left: .5em;
+            padding-bottom: .2em;
+            padding-top: .2em;
+        }
+        #header-container{
+            text-align: center;
+        }
+        .main-title{
+            font-size: 33px;
+        }
+        .sub-title{
+            font-size: 18px;
+        }
+        #header-cta-row{
+            margin-top: 0px;
+        }
+        .page-title{
+            font-size: 27px;
+            font-weight: 700;
+        }
+        .sub-header{
+            font-size: 20px;
+        }
+        .ac_title_class{
+            margin-left: 5%;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .contents-title{
+            font-size: 13px;
+            padding-top: 4px;
+        }
+        .sub-title{
+            font-size: 16px;
+            font-weight: 500;
+        }
+        #sub-title-wrapper{
+            padding-top: 2px;
+        }
+        .course-intro-text{
+        font-size: 1em;
+        line-height: 1.2;
+    }
+        .icon-list{
+        padding-left: 8%;
+        font-size: 14px;
+    }
+    
+    .contact-form-wrapper{
+        padding-left: 16px;
+    }
+    
+    }
+    
+    
+    
+    
+    
