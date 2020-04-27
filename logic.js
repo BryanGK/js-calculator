@@ -19,21 +19,28 @@ function getSecondNumber(number) {
 for (let i =0; i < digits.length; i++) {
     let digit = digits[i];
 
-    digit.addEventListener('click', numberButtonCallback);
+    digit.addEventListener('click', function(e) {
+         if(display.value === ".") {
+            if(display.includes(".")) {
+              let point = document.getElementById("decimal");
+              point.textContent = "";
+            }
+        }
+         if (operator === null) {
+             getFirstNumber(e.target.value);
+             console.log('This is the firstNumber', firstNumber);
+             renderInput(firstNumber);
+         } else {
+             getSecondNumber(e.target.value);
+             console.log('This is the secondNumber', secondNumber);
+             renderInput(secondNumber);
+         }
+    });
 }
 
-function numberButtonCallback(e) {
-   
-    if (operator === null) {
-        getFirstNumber(e.target.value);
-        console.log('This is the firstNumber', firstNumber);
-        renderInput(firstNumber);
-    } else {
-        getSecondNumber(e.target.value);
-        console.log('This is the secondNumber', secondNumber);
-        renderInput(secondNumber);
-    }
-   } 
+// function numberButtonCallback(e) {
+
+//    } 
 
 for (let i =0; i < operators.length; i++) {
    let theOperator = operators[i];
