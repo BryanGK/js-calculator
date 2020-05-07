@@ -20,35 +20,32 @@ for (let i =0; i < digits.length; i++) {
     let digit = digits[i];
 
     digit.addEventListener('click', function(e) {
-      
+        if(e.target.innerText === '.' && display.value.includes('.')) {
+            return;
+        } else {
+            display.append('.');
+        }
+       console.log('this is the target innerText value ', e.target.innerText);
+       console.log('this is the display ', display.value);
          if (operator === null) {
              getFirstNumber(e.target.value);
              console.log('This is the firstNumber', firstNumber);
+           
              renderInput(firstNumber);
          } else {
              getSecondNumber(e.target.value);
              console.log('This is the secondNumber', secondNumber);
              renderInput(secondNumber);
          }
-         let point = document.getElementById("decimal");
-        point.value = ".";
-         if(firstNumber.includes(".")) {
-          point.value = "";
-        }
-     else {
-          point.value = ".";
-        }
-        if(secondNumber !== null && secondNumber.includes(".")) {
-            point.value = ""; 
-        }
-        else {
-            point.value = ".";
-        }
+        //  let point = document.getElementById("decimal");
+        
     }
     )};
         
 
-
+function decimalStopper() {
+  
+};
 
 // function numberButtonCallback(e) {
 
