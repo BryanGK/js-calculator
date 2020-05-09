@@ -12,58 +12,11 @@ body {
   margin: 0;
 }
 
-/* Responsive Images */
 
-embed,
-iframe,
-img,
-object,
-video {
-  max-width: 100%;
-}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul,
-ol,
-li,
-p,
-pre,
-blockquote,
-figure,
-hr {
-  margin: 0;
-  padding-right: 0;
-  padding-left: 0;
-}
 
-a {
-  text-decoration: none;
-}
 
-a:focus {
-  outline: none;
-}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  display: block;
-}
-
-/* Removes all decimals and discs from lists */
-
-ol,
-ul {
-  list-style: none;
-}
 
 /* 
  * Completely resets form items
@@ -111,7 +64,7 @@ html {
 
 body {
   align-items: center;
-  background-image: linear-gradient(236deg, whitesmoke, darkslategray);
+  background-color: #fff;
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -126,11 +79,12 @@ body {
 }
 
 .calculator {
-  border-radius: 12px;
+  border: solid;
+  border-width: 1px;
+  border-color: black;
   box-shadow: 0 0 40px 0px rgba(0, 0, 0, 0.15);
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2em;
   max-width: 15em;
   overflow: hidden;
 }
@@ -181,8 +135,3 @@ body {
   grid-row: 2 / span 4;
 }
 
-@media all and (max-width: 480px) {
-  .container {
-    max-width: 80em;
-  }
- }
