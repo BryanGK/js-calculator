@@ -9,111 +9,100 @@ const clear = document.querySelector('.clear');
 const equal = document.querySelector('.equal-key');
 
 function getFirstNumber(number) {
-    firstNumber === null ? firstNumber = number : firstNumber += number;
-};
+  firstNumber === null ? (firstNumber = number) : (firstNumber += number);
+}
 
 function getSecondNumber(number) {
-    secondNumber === null ? secondNumber = number : secondNumber += number;
-};
+  secondNumber === null ? (secondNumber = number) : (secondNumber += number);
+}
 
-for (let i =0; i < digits.length; i++) {
-    let digit = digits[i];
+for (let i = 0; i < digits.length; i++) {
+  let digit = digits[i];
 
-    digit.addEventListener('click', function(e) {
-        if(e.target.innerText === '.' && display.value.includes('.')) {
-            return;
-        } else {
-            display.append('.');
-        }
-       console.log('this is the target innerText value ', e.target.innerText);
-       console.log('this is the display ', display.value);
-         if (operator === null) {
-             getFirstNumber(e.target.value);
-             console.log('This is the firstNumber', firstNumber);
-           
-             renderInput(firstNumber);
-         } else {
-             getSecondNumber(e.target.value);
-             console.log('This is the secondNumber', secondNumber);
-             renderInput(secondNumber);
-         }
-        //  let point = document.getElementById("decimal");
-        
+  digit.addEventListener('click', function (e) {
+    if (e.target.innerText === '.' && display.value.includes('.')) {
+      return;
+    } else {
+      display.append('.');
     }
-    )};
-        
+    console.log('this is the target innerText value ', e.target.innerText);
+    console.log('this is the display ', display.value);
+    if (operator === null) {
+      getFirstNumber(e.target.value);
+      console.log('This is the firstNumber', firstNumber);
 
-function decimalStopper() {
-  
-};
+      renderInput(firstNumber);
+    } else {
+      getSecondNumber(e.target.value);
+      console.log('This is the secondNumber', secondNumber);
+      renderInput(secondNumber);
+    }
+    //  let point = document.getElementById("decimal");
+    //nothing to commit here except for this comment
+  });
+}
+
+function decimalStopper() {}
 
 // function numberButtonCallback(e) {
 
-//    } 
+//    }
 
-for (let i =0; i < operators.length; i++) {
-   let theOperator = operators[i];
-   console.log(theOperator.value);
+for (let i = 0; i < operators.length; i++) {
+  let theOperator = operators[i];
+  console.log(theOperator.value);
 
-theOperator.addEventListener('click', (e) => {
+  theOperator.addEventListener('click', (e) => {
     operator = e.target.value;
     console.log('operator =', operator);
-    });
+  });
 }
 
 equal.addEventListener('click', (e) => {
-
-    renderInput(calculate(firstNumber, secondNumber));  
-    firstNumber = display.value;
-    secondNumber = null;
-    console.log('display value is ', display.value);
-    console.log('current firstNumber value is ', firstNumber);
-    console.log('current secondNumber value is ', secondNumber);
+  renderInput(calculate(firstNumber, secondNumber));
+  firstNumber = display.value;
+  secondNumber = null;
+  console.log('display value is ', display.value);
+  console.log('current firstNumber value is ', firstNumber);
+  console.log('current secondNumber value is ', secondNumber);
 });
 
 function clearDisplay() {
-    clear.addEventListener('click', (e) => {
-        display.value = 0;
-        firstNumber = null;
-        secondNumber = null;
-        operator = null;
-    })
-};
+  clear.addEventListener('click', (e) => {
+    display.value = 0;
+    firstNumber = null;
+    secondNumber = null;
+    operator = null;
+  });
+}
 
 function renderInput(args) {
-    display.value = args;
-    console.log(args);
-};
+  display.value = args;
+  console.log(args);
+}
 
 function calculate(firstNumber, secondNumber) {
-
-    let num1 = parseFloat(firstNumber);
-    let num2 = parseFloat(secondNumber);
-    switch (operator) {
-        
-        case '+':
-            display.value = num1 + num2
-            break;
-        case '-':
-            display.value = num1 - num2
-            break;
-        case '*':
-            display.value = num1 * num2
-            break;
-        case '/':
-            display.value = num1 / num2
-            break;
-        default:
-            display.value = 0;
-    }
-    return display.value;
-};
-
+  let num1 = parseFloat(firstNumber);
+  let num2 = parseFloat(secondNumber);
+  switch (operator) {
+    case '+':
+      display.value = num1 + num2;
+      break;
+    case '-':
+      display.value = num1 - num2;
+      break;
+    case '*':
+      display.value = num1 * num2;
+      break;
+    case '/':
+      display.value = num1 / num2;
+      break;
+    default:
+      display.value = 0;
+  }
+  return display.value;
+}
 
 clearDisplay();
 
 console.log('operator value =', operator);
-
-
-
-
